@@ -24,7 +24,8 @@ POST – Add a new task
 When you run the Flask app, it launches a local web server. That server listens for HTTP requests at certain "routes" (URLs), and performs actions based on the HTTP method (GET or POST).
 
 🔌 API Endpoints
-1. GET /tasks
+GET /tasks
+
 📥 What it does: Returns all current tasks.
 
 📤 Response format: JSON array.
