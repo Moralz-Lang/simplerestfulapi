@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Task Manager</title>
+</head>
+<body>
+  <h1>Task List</h1>
+  <ul id="taskList"></ul>
+
+  <h2>Add Task</h2>
+  <input type="text" id="taskTitle" placeholder="Task title">
+  <button onclick="addTask()">Add</button>
+
+  <script>
+    async function loadTasks() {
+      const response = await fetch('/tasks');
+      const tasks = await response.json();
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+      tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = task.title;
+        list.appendChild(li);
+      });
+    }
+
+    async function addTask() {
+      const title = document.getElementById('taskTitle').value;
+      if (!title) return alert("Enter a task!");
+      await fetch('/tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title })
+      });
+      document.getElementById('taskTitle').value = '';
+      loadTasks();
+    }
+
+    loadTasks();
+  </script>
+</body>
+</html>
