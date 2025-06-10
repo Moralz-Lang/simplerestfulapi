@@ -44,7 +44,8 @@ json
   {"title": "Buy groceries"},
   {"title": "Call mom"}
 ]
-2. POST /tasks
+
+POST /tasks
 📥 What it does: Accepts a new task (in JSON format) and adds it to the list.
 
 📤 Response format: Updated task list.
