@@ -53,15 +53,11 @@ json
 
 Example Request:
 
-bash
-Copy
-Edit
 curl -X POST -H "Content-Type: application/json" -d '{"title": "Read a book"}' http://127.0.0.1:5000/tasks
 Example Response:
 
 json
-Copy
-Edit
+
 [
   {"title": "Buy groceries"},
   {"title": "Call mom"},
