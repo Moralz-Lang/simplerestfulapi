@@ -1,3 +1,8 @@
+# simplerestfulapi
+Task Tracker which using a python script to integrate using flask for html front end.
+
+MAKE SURE TO INSTALL pip flasgger & pip install flask for the API to work.
+
 Simple Restful API For In-memory TaskTracker
 
 📘 Flask Task API – Explanation
@@ -19,7 +24,8 @@ POST – Add a new task
 When you run the Flask app, it launches a local web server. That server listens for HTTP requests at certain "routes" (URLs), and performs actions based on the HTTP method (GET or POST).
 
 🔌 API Endpoints
-1. GET /tasks
+GET /tasks
+
 📥 What it does: Returns all current tasks.
 
 📤 Response format: JSON array.
@@ -38,7 +44,8 @@ json
   {"title": "Buy groceries"},
   {"title": "Call mom"}
 ]
-2. POST /tasks
+
+POST /tasks
 📥 What it does: Accepts a new task (in JSON format) and adds it to the list.
 
 📤 Response format: Updated task list.
@@ -47,15 +54,11 @@ json
 
 Example Request:
 
-bash
-Copy
-Edit
 curl -X POST -H "Content-Type: application/json" -d '{"title": "Read a book"}' http://127.0.0.1:5000/tasks
 Example Response:
 
 json
-Copy
-Edit
+
 [
   {"title": "Buy groceries"},
   {"title": "Call mom"},
@@ -83,4 +86,7 @@ Add input validation and error handling.
 Connect it to a real database (like SQLite or MongoDB).
 
 Create a front-end (React or HTML) to interact with it.
+
+
+
 
